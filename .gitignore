@@ -1,0 +1,35 @@
+.DS_STORE
+
+dist
+bazel-
+integrationbazelbazel-
+e2e_test.
+node_modules
+bower_components
+toolsgulp-taskscldrcldr-data
+
+# Include when developing application packages.
+pubspec.lock
+.c9
+.idea
+.settings
+.swo
+modules.settings
+.vscode
+modules.vscode
+
+# Don't check in secret files
+secret.js
+
+# Ignore npmyarn debug log
+npm-debug.log
+yarn-error.log
+
+# build-analytics
+.build-analytics
+
+# rollup-test output
+modulesrollup-testdist
+
+# User specific bazel settings
+.bazelrc.user
