@@ -1,0 +1,34 @@
+<h2>Interpolación</h2>
+
+<div>
+  <h3>Ejemplo 1 - Mostrar el valor de una variable en el HTML</h3>
+  <li>El valor de direccion es: {{direccion}}</li>
+  <br>
+  <li>El nombre de la persona es {{persona.nombre}} {{persona.apellido}}</li>
+</div>
+
+<div>
+  <h3>Ejemplo 2 - Evaluar expresiones</h3>
+  <li>La suma de 2 y 2 es {{2 + 2}}</li>
+</div>
+
+<div>
+  <h3>Ejemplo 3 - Evaluar una función</h3>
+  <li>Hola mundo repetido es: {{duplicarTexto('hola mundo')}}</li>
+</div>
+
+<div>
+  <h3>Ejemplo 4 - Usando el operador de navegación segura (?.)</h3>
+  <li>La propiedad persona2 no existe: {{persona2?.edad}}</li>
+</div>
+
+<div>
+  <h3>Ejemplo 5 - Podemos hacer varias cosas al mismo tiempo:</h3>
+  <li>{{ 'Podemos concatenar strings: ' + duplicarTexto(persona.nombre)}}</li>
+</div>
+
+<div>
+  <h3>Ejemplo 6 - Podemos usar variables de referencia de plantilla</h3>
+  <p #miparrafo>este es un parrafo</p>
+  <input value="{{miparrafo.innerHTML}}">
+</div>
