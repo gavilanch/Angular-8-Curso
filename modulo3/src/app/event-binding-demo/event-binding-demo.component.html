@@ -1,0 +1,20 @@
+<h2>Binding de Eventos</h2>
+
+<div>
+  <h3>Ejemplo 1 - Binding de evento con un botón</h3>
+  <button (click)="incrementar()">Incrementar Contador</button> <br />
+  Contador: {{ cantidad }}
+</div>
+
+<div>
+  <h3>Ejemplo 2 - Binding de evento sin una función</h3>
+  <button (click)="cantidad = cantidad + 1">Incrementar Contador</button> <br />
+  Contador: {{ cantidad }}
+</div>
+
+<div>
+  <h3>Ejemplo 3 - Otros eventos y objeto especial $event</h3>
+  <input (input)="onTextboxInput($event)" >
+  <br>
+  Texto escrito: {{textoEscrito}}
+</div>
