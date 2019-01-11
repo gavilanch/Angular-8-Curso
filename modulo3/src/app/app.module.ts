@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InterpolacionDemoComponent } from './interpolacion-demo/interpolacion-demo.component';
 import { EventBindingDemoComponent } from './event-binding-demo/event-binding-demo.component';
+import { PropertyBindingDemoComponent } from './property-binding-demo/property-binding-demo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InterpolacionDemoComponent,
-    EventBindingDemoComponent
+    EventBindingDemoComponent,
+    PropertyBindingDemoComponent
   ],
   imports: [
     BrowserModule,

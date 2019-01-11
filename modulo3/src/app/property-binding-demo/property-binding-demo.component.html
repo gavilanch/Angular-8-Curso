@@ -1,0 +1,16 @@
+<h2>Binding de Propiedad</h2>
+
+<div>
+  <h3>Ejemplo 1 - Binding de evento con un botón</h3>
+  Seleccione una imagen:
+  <select id="selectImagen" (change)="imagenURL= $event.target.value">
+    <option
+      value="https://www-asp.azureedge.net/v-2018-11-02-001/images/ui/asplogo-square.png"
+      >ASP.NET</option>
+    <option
+      value="https://angular.io/assets/images/logos/angularjs/AngularJS-Shield.svg"
+      >Angular</option>
+  </select>
+  <br />
+  <img [src]="imagenURL" />
+</div>
