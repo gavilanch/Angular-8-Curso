@@ -1,0 +1,20 @@
+<div>
+  <h3>Ejemplo 3 - Otras variables de contexto</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Indice</th>
+        <th>Nombre</th>
+        <th>Edad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let persona of personas; let indice = index; let primer = first; 
+      let ultimo = last; let par = even, let impar = odd" [ngClass]="{'par': par, 'impar': impar}" >
+        <td>{{ indice }}</td>
+        <td>{{ persona.nombre }}</td>
+        <td>{{ persona.edad }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

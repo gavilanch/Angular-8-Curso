@@ -1,0 +1,9 @@
+<div>
+  <h3>Ejemplo 1 - ngModel para hacer binding de dos vías (two-way binding)</h3>
+  Escribe algo: <input type="text" [(ngModel)]="texto" />
+  <br />
+  <span><strong>El valor de la variable es: </strong>{{ texto }}</span>
+  <br /><br />
+  <button (click)="hacerMayusculas()">MAYUSCULAS</button>
+  <button (click)="hacerMinusculas()">minusculas</button>
+</div>

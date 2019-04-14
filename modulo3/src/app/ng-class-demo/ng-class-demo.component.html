@@ -1,0 +1,15 @@
+<div>
+  <h3>Ejemplo 2 - Múltiples condiciones para distintas clases</h3>
+  <input id="chb" type="checkbox" (change)="colorCheck = !colorCheck" /> Cambiar color
+  <br>
+  <input id="chb" type="checkbox" (change)="tamanoCheck = !tamanoCheck" /> Cambiar tamaño
+ 
+  <div class="cuadrado" [ngClass]="{ secundario: colorCheck }"></div>
+  <br /><br />
+ 
+  <div
+    class="cuadrado"
+    [ngClass]="{ 'secundario': colorCheck, 'cuadrado-grande': tamanoCheck }"
+  ></div>
+ </div>
+ 

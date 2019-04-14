@@ -1,0 +1,22 @@
+<div>
+  <h3>Ejemplo 1 - ngSwitch</h3>
+
+  Seleccione una opción
+  <select (change)="opcion = $event.target.value">
+    <option>--Seleccione una opción--</option>
+    <option value="ASP.NET">ASP.NET</option>
+    <option value="Angular">Angular</option>
+  </select>
+
+  <div [ngSwitch]="opcion">
+    <div *ngSwitchDefault>Debe escoger una opcion</div>
+    <div *ngSwitchCase="'ASP.NET'">
+      Usted ha escogido ASP.NET, un framework de desarrollo de aplicaciones web
+      creado por Microsoft
+    </div>
+    <div *ngSwitchCase="'Angular'">
+      Usted ha escogido Angular, una plataforma de desarrollo de aplicaciones
+      modernas
+    </div>
+  </div>
+</div>

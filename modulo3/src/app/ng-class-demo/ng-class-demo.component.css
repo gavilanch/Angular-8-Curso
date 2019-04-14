@@ -1,0 +1,15 @@
+.cuadrado {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+   }
+   
+   .secundario {
+    background-color: blue;
+   }
+   
+   .cuadrado-grande {
+    width: 200px;
+    height: 200px;
+   }
+   
