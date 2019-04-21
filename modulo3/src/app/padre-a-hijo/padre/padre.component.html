@@ -1,0 +1,7 @@
+<h3>Ejemplo 2 - Comunicación de Padre a Hijo - Usando getters y setters</h3>
+
+<h3>Componente Padre</h3>
+
+<input (input)="textoPadre = $event.target.value">
+
+<app-hijo [textoHijo]="textoPadre"></app-hijo>

@@ -1,0 +1,7 @@
+<h3>Ejemplo 1 - Recibiendo un mensaje del componente hijo</h3>
+
+<h4>Componente Padre</h4>
+
+<span>Mensaje desde el componente hijo: {{ textoPadre }}</span>
+
+<app-hijo-2 (enviar)="recibirMensaje($event)" (enviarMayusculas)="recibirMensaje($event)"></app-hijo-2>
