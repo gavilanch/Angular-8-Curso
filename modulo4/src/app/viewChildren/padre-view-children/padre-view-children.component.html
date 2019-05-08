@@ -1,0 +1,11 @@
+<button (click)="agregar()">Agregar</button>
+<button (click)="remover()">Remover</button>
+<button (click)="voltearColores()">Voltear Colores</button>
+<br><br>
+
+<select #selectComponentes>
+  <option *ngFor="let option of arr; let index = index" [value]="index">componente {{index+1}}</option>
+</select>
+<button (click)="voltearColor(selectComponentes.value)">Voltear Color</button>
+
+<hijo-view-children *ngFor="let i of arr"></hijo-view-children>
