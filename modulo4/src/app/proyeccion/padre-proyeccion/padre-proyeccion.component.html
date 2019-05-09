@@ -1,0 +1,16 @@
+<h4>Componente Padre</h4>
+
+<!--Ejemplo 1: ng-content único-->
+<!-- <hijo-proyeccion>hola</hijo-proyeccion>
+<br>
+
+<hijo-proyeccion><button (click)="handleClick()">Mi botón</button></hijo-proyeccion>
+
+<hijo-proyeccion><proyectado></proyectado></hijo-proyeccion> -->
+
+<!--Ejemplo 2: Varios ng-content-->
+<hijo-proyeccion>
+  <ng-container cabecera>Esta es la cabecera</ng-container>
+  <ng-container cuerpo>Este es el cuerpo</ng-container>
+  <ng-container pie>Este es el pie</ng-container>
+</hijo-proyeccion>
