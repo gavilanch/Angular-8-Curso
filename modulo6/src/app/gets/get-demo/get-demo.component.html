@@ -1,0 +1,23 @@
+Put the user ID:
+<input type="text" #textId>
+<button (click)="getUser(textId.value)">Get user</button>
+
+<hr>
+
+<ng-container *ngIf="notFound">
+  User not found
+</ng-container>
+
+<ng-container *ngIf="user">
+  <div>
+    Id: {{ user.id }}
+  </div>
+
+  <div>
+    Name: {{ user.name }}
+  </div>
+
+  <div>
+    Username: {{ user.username }}
+  </div>
+</ng-container>
