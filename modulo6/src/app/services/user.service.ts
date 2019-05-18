@@ -25,6 +25,19 @@ export class UserService {
     return this.http.get(this.baseURL, {observe: 'response'});
   }
 
+  getUsersSendHeaders() {
+     // headers HTTP
+     let headers = new HttpHeaders();
+     headers = headers.append('Authorization', 'bearer token2');
+     headers = headers.append('X-Pagination', '3');
+ 
+     // query strings
+     let params = new HttpParams();
+     params = params.append('X-Pagination', '4');
+ 
+     return this.http.get<User[]>(this.baseURL, {headers, params});
+  }
+
   createUser(user: User): Observable<User>{
     return this.http.post<User>(this.baseURL, user);
   }
