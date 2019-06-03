@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { WebApiService } from '../services/web-api.service';
+import { Post } from '../models/post';
 
 @Component({
   selector: 'app-posts',
@@ -8,9 +10,19 @@ import { Router } from '@angular/router';
 })
 export class PostsComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  posts: Post[];
+  constructor(private router: Router, 
+    private route: ActivatedRoute, 
+    private webApiService: WebApiService) { }
 
   ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+      if (params.has("id")){
+        this.webApiService.obtenerPostsPorUsuario(params.get("id")).subscribe(posts => this.posts = posts);
+      } else {
+        this.webApiService.obtenerPosts().subscribe(posts => this.posts = posts);
+      }
+    });
   }
 
   navegarHaciaUsuarios(){
