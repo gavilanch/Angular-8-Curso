@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Usuario } from '../models/usuario';
 import { Post } from '../models/post';
@@ -11,8 +11,9 @@ import { Post } from '../models/post';
 export class WebApiService {
   baseURLUsers = environment.apiURL + 'users/';
   baseURLPosts = environment.apiURL + 'posts/';
-  constructor(private http: HttpClient) { }
  
+  constructor(private http: HttpClient) { }
+
   obtenerUsuarios(): Observable<Usuario[]> {
     return this.http.get<Usuario[]>(this.baseURLUsers);
   }
@@ -25,5 +26,5 @@ export class WebApiService {
     const url = `${this.baseURLPosts}?userId=${id}`;
     return this.http.get<Post[]>(url);
   }
- }
  
+}

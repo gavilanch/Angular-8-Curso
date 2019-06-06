@@ -3,11 +3,23 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" [routerLinkActive]="'active'" routerLink="/usuarios">Usuarios</a>
+        <a class="nav-link" routerLink="/usuarios" [routerLinkActive]="'active'">Usuarios</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLinkActive]="'active'" routerLink="/posts">Posts</a>
+        <a class="nav-link" routerLink="/posts" [routerLinkActive]="'active'">Posts</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/contacto" [routerLinkActive]="'active'">Contacto</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="[{outlets: {popup: ['panico']}}]">Pánico</a>
+      </li>
+      <li class="nav-item">
+        <a href="" routerLink="/login" class="nav-link" *ngIf="!usuarioLogueado">Login</a>
+        <a (click)="logout()" class="nav-link" style="cursor: pointer;" *ngIf="usuarioLogueado">Logout</a>
+      </li>
+
     </ul>
   </div>
 </nav>

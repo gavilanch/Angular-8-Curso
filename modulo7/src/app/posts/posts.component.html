@@ -1,22 +1,24 @@
 <h3>Componente de Posts</h3>
 
-<button (click)="navegarHaciaUsuarios()">Usuarios</button>
+<button class="btn btn-primary" (click)="navegarHaciaUsuarios()">Regresar a Usuarios</button>
 
 <ng-container *ngIf="posts">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>User Id</th>
-                <th>Title</th>
-                <th>Body</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let post of posts">
-                <td>{{post.userId}}</td>
-                <td>{{ post.title }}</td>
-                <td>{{ post.body }}</td>
-            </tr>
-        </tbody>
-    </table>
+ <table class="table">
+   <thead>
+     <tr>
+       <th>User Id</th>
+       <th>Title</th>
+       <th>Body</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr *ngFor="let post of posts">
+       <td>{{post.userId}}</td>
+       <td>{{ post.title }}</td>
+       <td>{{ post.body }}</td>
+     </tr>
+   </tbody>
+ </table>
 </ng-container>
+
+

@@ -9,16 +9,12 @@ import { Usuario } from '../models/usuario';
   styleUrls: ['./usuarios.component.css']
 })
 export class UsuariosComponent implements OnInit {
-  usuarios: Usuario[];
   constructor(private router: Router,
     private webApiService: WebApiService) { }
+  usuarios: Usuario[];
 
   ngOnInit() {
-    this.webApiService.obtenerUsuarios().subscribe((usuariosDelApi: Usuario[]) => this.usuarios = usuariosDelApi);
-  }
-
-  verPosts(idUsuario: number){
-    this.router.navigate(['/usuarios', idUsuario, 'posts']);
+    
   }
 
 }

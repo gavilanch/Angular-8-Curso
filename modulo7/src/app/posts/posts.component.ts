@@ -10,19 +10,22 @@ import { Post } from '../models/post';
 })
 export class PostsComponent implements OnInit {
 
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private webApiService: WebApiService
+  ) {}
+ 
   posts: Post[];
-  constructor(private router: Router, 
-    private route: ActivatedRoute, 
-    private webApiService: WebApiService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       if (params.has("id")){
         this.webApiService.obtenerPostsPorUsuario(params.get("id")).subscribe(posts => this.posts = posts);
-      } else {
+      } else{
         this.webApiService.obtenerPosts().subscribe(posts => this.posts = posts);
       }
-    });
+    })
   }
 
   navegarHaciaUsuarios(){
