@@ -19,13 +19,9 @@ export class PostsComponent implements OnInit {
   posts: Post[];
 
   ngOnInit() {
-    this.route.paramMap.subscribe(params => {
-      if (params.has("id")){
-        this.webApiService.obtenerPostsPorUsuario(params.get("id")).subscribe(posts => this.posts = posts);
-      } else{
-        this.webApiService.obtenerPosts().subscribe(posts => this.posts = posts);
-      }
-    })
+    this.route.data.subscribe((data: {posts: Post[]}) => {
+        this.posts = data.posts;
+    });
   }
 
   navegarHaciaUsuarios(){
