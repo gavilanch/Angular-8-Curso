@@ -5,8 +5,22 @@ import { CanActivateGuard } from '../can-activate.guard';
 import { PostsResolverGuard } from '../posts-resolver.guard';
 
 const routes: Routes = [
-  {path: 'posts', component: PostsComponent, canActivate: [CanActivateGuard], resolve: {posts: PostsResolverGuard}},
-  {path: 'usuarios/:id/posts', component: PostsComponent, canActivate: [CanActivateGuard], resolve: {posts: PostsResolverGuard}}
+  {
+    path: '',
+    canActivateChild: [CanActivateGuard],
+    children: [
+      {
+        path: '',
+        component: PostsComponent,
+        resolve: {posts: PostsResolverGuard}
+      },
+      {
+        path: 'usuario/:id',
+        component: PostsComponent,
+        resolve: {posts: PostsResolverGuard}
+      }
+    ]
+  }
 ];
 
 @NgModule({

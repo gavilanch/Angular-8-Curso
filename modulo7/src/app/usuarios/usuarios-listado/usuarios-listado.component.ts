@@ -24,7 +24,7 @@ export class UsuariosListadoComponent implements OnInit {
   }
 
   verPosts(idUsuario: number) {
-    this.router.navigate(["/usuarios", idUsuario, 'posts']);
+    this.router.navigate(["/posts", 'usuario', idUsuario]);
   }
 
 }
