@@ -1,0 +1,5 @@
+<h2>Comunicación entre componentes hermanos</h2>
+
+<hijo1-her (textoCambiado)="textoHijo1 = $event"></hijo1-her>
+<hr>
+<hijo2-her [textoHijo2]="textoHijo1"></hijo2-her>

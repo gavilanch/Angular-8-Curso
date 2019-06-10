@@ -17,6 +17,9 @@ import { PadrePahComponent } from './padre-a-hijo/padre-pah/padre-pah.component'
 import { HijoPahComponent } from './padre-a-hijo/hijo-pah/hijo-pah.component';
 import { HijoHapComponent } from './hijo-a-padre/hijo-hap/hijo-hap.component';
 import { PadreHapComponent } from './hijo-a-padre/padre-hap/padre-hap.component';
+import { Hijo1HerComponent } from './hermanos/hijo1-her/hijo1-her.component';
+import { Hijo2HerComponent } from './hermanos/hijo2-her/hijo2-her.component';
+import { PadreHerComponent } from './hermanos/padre-her/padre-her.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { PadreHapComponent } from './hijo-a-padre/padre-hap/padre-hap.component'
     PadrePahComponent,
     HijoPahComponent,
     HijoHapComponent,
-    PadreHapComponent
+    PadreHapComponent,
+    Hijo1HerComponent,
+    Hijo2HerComponent,
+    PadreHerComponent
   ],
   imports: [
     BrowserModule,
