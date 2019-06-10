@@ -1,0 +1,7 @@
+<h3>Ejemplo 1 - Comunicación de Padre a Hijo</h3>
+
+<h3>Componente Padre</h3>
+
+<input (input)="textoPadre = $event.target.value" >
+
+<hijo-pah [textoHijo]="textoPadre"></hijo-pah>

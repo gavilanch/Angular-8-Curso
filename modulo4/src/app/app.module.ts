@@ -13,6 +13,8 @@ import { HijoProyeccionComponent } from './proyeccion/hijo-proyeccion/hijo-proye
 import { ProyectadoComponent } from './proyeccion/proyectado/proyectado.component';
 import { PadreEstilosComponent } from './estilos/padre-estilos/padre-estilos.component';
 import { HijoEstilosComponent } from './estilos/hijo-estilos/hijo-estilos.component';
+import { PadrePahComponent } from './padre-a-hijo/padre-pah/padre-pah.component';
+import { HijoPahComponent } from './padre-a-hijo/hijo-pah/hijo-pah.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { HijoEstilosComponent } from './estilos/hijo-estilos/hijo-estilos.compon
     HijoProyeccionComponent,
     ProyectadoComponent,
     PadreEstilosComponent,
-    HijoEstilosComponent
+    HijoEstilosComponent,
+    PadrePahComponent,
+    HijoPahComponent
   ],
   imports: [
     BrowserModule,
