@@ -20,6 +20,11 @@ import { PadreHapComponent } from './hijo-a-padre/padre-hap/padre-hap.component'
 import { Hijo1HerComponent } from './hermanos/hijo1-her/hijo1-her.component';
 import { Hijo2HerComponent } from './hermanos/hijo2-her/hijo2-her.component';
 import { PadreHerComponent } from './hermanos/padre-her/padre-her.component';
+import { PadreLejComponent } from './lejanos/padre-lej/padre-lej.component';
+import { HijoALejComponent } from './lejanos/hijo-a-lej/hijo-a-lej.component';
+import { HijoBLejComponent } from './lejanos/hijo-b-lej/hijo-b-lej.component';
+import { NietoALejComponent } from './lejanos/nieto-a-lej/nieto-a-lej.component';
+import { NietoBLejComponent } from './lejanos/nieto-b-lej/nieto-b-lej.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +44,12 @@ import { PadreHerComponent } from './hermanos/padre-her/padre-her.component';
     PadreHapComponent,
     Hijo1HerComponent,
     Hijo2HerComponent,
-    PadreHerComponent
+    PadreHerComponent,
+    PadreLejComponent,
+    HijoALejComponent,
+    HijoBLejComponent,
+    NietoALejComponent,
+    NietoBLejComponent
   ],
   imports: [
     BrowserModule,
