@@ -6,7 +6,18 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./hijo-pah.component.css']
 })
 export class HijoPahComponent {
+  // Ejemplo 1.
+  // @Input()
+  // textoHijo: string;
+
+  // Ejemplo 2.
+  private _textoHijo: string;
+
   @Input()
-  textoHijo: string;
- 
+  set textoHijo(value: string) {
+    value = value || '';
+    this._textoHijo = value.toUpperCase();
+  }
+
+  get textoHijo() { return this._textoHijo; }
 }

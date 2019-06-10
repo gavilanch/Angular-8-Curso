@@ -15,6 +15,8 @@ import { PadreEstilosComponent } from './estilos/padre-estilos/padre-estilos.com
 import { HijoEstilosComponent } from './estilos/hijo-estilos/hijo-estilos.component';
 import { PadrePahComponent } from './padre-a-hijo/padre-pah/padre-pah.component';
 import { HijoPahComponent } from './padre-a-hijo/hijo-pah/hijo-pah.component';
+import { HijoHapComponent } from './hijo-a-padre/hijo-hap/hijo-hap.component';
+import { PadreHapComponent } from './hijo-a-padre/padre-hap/padre-hap.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { HijoPahComponent } from './padre-a-hijo/hijo-pah/hijo-pah.component';
     PadreEstilosComponent,
     HijoEstilosComponent,
     PadrePahComponent,
-    HijoPahComponent
+    HijoPahComponent,
+    HijoHapComponent,
+    PadreHapComponent
   ],
   imports: [
     BrowserModule,
