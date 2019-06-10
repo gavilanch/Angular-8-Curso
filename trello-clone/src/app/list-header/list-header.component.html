@@ -1,0 +1,18 @@
+<div style="display: flex;flex-direction: row">
+  <span class="mat-h2 clickable" (click)="titleClicked()"
+    [ngStyle]="{ 'display': isEditingTitle ? 'none' : 'block'}">{{list.title}}</span>
+  <textarea name="list-title" class="blend-in mat-h2" #listTitle
+    [ngStyle]="{ 'display': isEditingTitle ? 'block' : 'none'}" (focusin)="focusInTitle($event)"
+    (focusout)="editListTitle($event.target.value)">{{list.title}}</textarea>
+  <div>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="deleteList()">
+        <mat-icon>delete</mat-icon>
+        <span>Delete</span>
+      </button>
+    </mat-menu>
+  </div>
+</div>

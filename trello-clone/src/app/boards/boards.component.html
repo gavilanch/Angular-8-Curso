@@ -1,0 +1,17 @@
+<span class="mat-title">Create a new board</span>
+<div>
+  <button mat-raised-button color="primary" (click)="addBoard()">
+    <mat-icon>add</mat-icon>New Board
+  </button>
+</div>
+
+<hr>
+<div style="margin-bottom: 8px">
+  <span class="mat-title">My boards</span>
+</div>
+
+<div class="boards-container" *ngIf="boards">
+  <div routerLink="/boards/{{board.id}}" class="board-square mat-body" *ngFor="let board of boards">
+    {{board.title}}
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<mat-toolbar class="fixed-top" color="primary">
+  <span>
+    <a mat-button routerLink="boards">
+      <mat-icon>assignment</mat-icon> Trello Clone
+    </a>
+  </span>
+  <div>
+    <a mat-button routerLink="boards">
+      Boards
+    </a>
+  </div>
+  <span class="example-spacer"></span>
+  <div>
+    <button mat-button [matMenuTriggerFor]="userMenu">
+      {{ user.email }}
+    </button>
+    <mat-menu #userMenu="matMenu" xPosition="before">
+      <button (click)="logout()" mat-menu-item>Logout</button>
+    </mat-menu>
+  </div>
+</mat-toolbar>

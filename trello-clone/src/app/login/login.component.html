@@ -1,0 +1,23 @@
+<div class="example-container">
+  <span class="mat-display-3 center">Trello Clone</span>
+  <ng-container *ngIf="true">
+    <span class="error mat-body">{{errorMessage}}</span>
+  </ng-container>
+
+  <mat-form-field color="primary">
+    <input matInput placeholder="Email" #email>
+  </mat-form-field>
+
+  <mat-form-field color="primary">
+    <input matInput placeholder="Password" type="password" #password>
+  </mat-form-field>
+
+  <div class="buttons-container center">
+    <button mat-raised-button color="primary" (click)="signIn(email.value, password.value)">
+      Log in
+    </button>
+    <button mat-raised-button color="primary" (click)="createUser(email.value, password.value)">
+      Create Account
+    </button>
+  </div>
+</div>

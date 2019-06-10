@@ -1,0 +1,7 @@
+<textarea class="h2-like blend-in outline-gone mat-body" #cardText (keydown)="cardTextChange($event, cardText.value)"
+  placeholder="write a card..."></textarea>
+<div style="width: 100%;">
+  <button mat-raised-button color="primary" style="margin: 5px 10px 0 0;" (click)="addCard(cardText.value)">Add
+    card</button>
+  <button mat-button (click)="handleCancelClick()">Cancel</button>
+</div>

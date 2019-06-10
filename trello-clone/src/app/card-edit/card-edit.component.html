@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Edit or delete card</h1>
+<div mat-dialog-content>
+  <p class="mat-body">Card text</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="cardText" cdkFocusInitial (focusout)="cardFocusout()">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions style="justify-content: space-around">
+  <button mat-raised-button color="warn" (click)="deleteCard()">Delete</button>
+  <button mat-button (click)="close()">Close</button>
+</div>

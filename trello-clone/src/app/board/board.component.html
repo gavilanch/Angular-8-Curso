@@ -1,0 +1,47 @@
+<app-board-title *ngIf="board" [board]="board"></app-board-title>
+<div style="margin-bottom: 16px;">
+    <button mat-raised-button color="warn" (click)="deleteBoard()">
+        <mat-icon>error</mat-icon>
+        Delete board
+    </button>
+</div>
+
+<div cdkDropList [cdkDropListData]="lists" (cdkDropListDropped)="dropList($event)" cdkDropListOrientation="horizontal"
+    class="lists-container">
+    <div #listDiv cdkDropListGroup cdkDrag [cdkDragData]="list" class="example-container list-container"
+        *ngFor="let list of lists; let index = index">
+        <app-list-header [list]="list" [index]="index" [boardId]="boardId" (listDeleted)="listDeleted($event)">
+        </app-list-header>
+        <div cdkDropList id={{list.order}} [cdkDropListData]="list.cards" (cdkDropListDropped)="dropCard($event)"
+            [cdkDropListConnectedTo]="getConnectedList()" class="example-list">
+            <div class="example-box mat-body" *ngFor="let card of list.cards; let cardIndex = index"
+                (click)="cardClicked(cardIndex, list, card)" cdkDrag [cdkDragData]="item">
+                {{card}}
+            </div>
+            <div class="example-box" *ngIf="list.displayComposer" style="flex-direction: column">
+                <app-card-form style="width:100%" [index]="index" (add)="addCard($event)"
+                    (cancel)="list.displayComposer = false"></app-card-form>
+            </div>
+        </div>
+        <div style="margin: 5px 0;">
+            <a *ngIf="!list.displayComposer" (click)="displayCardForm(index)" class="mat-body with-icon">
+                <mat-icon>add</mat-icon> <span class="aligned-with-icon">Add another card</span>
+            </a>
+        </div>
+    </div>
+    <div class="example-container" style="flex-direction: column">
+        <h2 class="clickable mat-title" *ngIf="!displayListComposer" (click)="displayCreateListForm()">
+            <mat-icon>add</mat-icon> Add another list
+        </h2>
+        <div *ngIf="displayListComposer">
+            <input class="mat-body" type="text" #listTitle placeholder="Enter list title"
+                (keyup)="changeTitleList($event, listTitle.value)">
+            <div>
+                <button mat-raised-button color="primary" (click)="addList(listTitle.value)"
+                    style="margin: 5px 10px 0 0;">Add
+                    List</button>
+                <button mat-button (click)="displayListComposer = false">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

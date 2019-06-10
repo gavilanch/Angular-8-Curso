@@ -1,0 +1,6 @@
+<span class="mat-title clickable" 
+[ngStyle]="{ 'display': isEditingBoardTitle ? 'none' : 'inline-block' }"
+  (click)="boardTitleClicked()">{{board.title}}</span>
+<input type="text" class="mat-title" value="{{board.title}}"
+  [ngStyle]="{ 'display': isEditingBoardTitle ? 'block' : 'none' }" #boardTitleInput
+  (focusout)="boardTitleInputFocusOut()" [(ngModel)]="board.title">

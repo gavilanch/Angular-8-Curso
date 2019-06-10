@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+.clickable {
+ cursor: pointer;
+}
+
+button {
+ cursor: pointer;
+}
+
+.error {
+ color: red;
+}
+
+.buttons-container button {
+ margin-right: 8px;
+}
+
+.blend-in {
+ height: 50px;
+ width: 100%;
+ border: none;
+ background:none;
+ box-shadow:none;
+ resize: none;
+}
