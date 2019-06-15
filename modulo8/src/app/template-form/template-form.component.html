@@ -1,0 +1,51 @@
+<h2>Formulario de Registro de Usuario</h2>
+
+<form (submit)="submit()" #formularioRegistro="ngForm">
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" autocomplete="off" class="form-control" id="username" name="username" required
+      [(ngModel)]="model.username" #username="ngModel" usernameUnico [ngModelOptions]="{updateOn: 'blur'}">
+
+    <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
+      <div *ngIf="username.errors.required">
+        Username es requerido.
+      </div>
+      <div *ngIf="username.errors.usernameUnico">
+        Ese nombre de usuario ya está en uso
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="password" name="password" [(ngModel)]="model.password" required
+      minlength="4" #password="ngModel" passwordValidation>
+
+    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+      <div *ngIf="password.errors.required">
+        Password es requerido
+      </div>
+      <div *ngIf="password.errors.minlength">
+        La longitud mímina del password debe de ser de 4 caracteres.
+      </div>
+      <div *ngIf="password.errors.passwordValidation">
+        {{password.errors.passwordValidation.message}}
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="suscripcion">Escoja el tipo de suscripción</label>
+    <select class="form-control" id="suscripcion" name="suscripcion" [(ngModel)]="model.suscripcion">
+      <option *ngFor="let suscripcion of suscripciones" [value]="suscripcion.value">{{suscripcion.text}}</option>
+    </select>
+  </div>
+
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="promociones" name="promociones" [(ngModel)]="model.promociones">
+    <label class="form-check-label" for="promociones">Deseo recibir promociones</label>
+  </div>
+
+  <button type="submit" class="btn btn-success" [disabled]="!formularioRegistro.form.valid">Enviar</button>
+  <button type="button" class="btn btn-default" (click)="refrescar()">Refrescar</button>
+
+</form>
