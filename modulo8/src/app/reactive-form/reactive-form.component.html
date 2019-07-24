@@ -1,0 +1,76 @@
+<h2>Formulario de Registro de Usuario - Reactivo</h2>
+
+<form (submit)="submit()" [formGroup]="registerForm">
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" class="form-control" formControlName="username">
+    <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
+      <div *ngIf="username.errors.required">
+        El nombre de usuario es requerido
+      </div>
+      <div *ngIf="username.errors.usernameUnico">
+        Ese nombre de usuario ya está en uso
+      </div>
+
+    </div>
+
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" formControlName="password">
+
+    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+      <div *ngIf="password.errors.required">
+        El password es requerido
+      </div>
+      <div *ngIf="password.errors.minlength">
+        La longitud mínima del password es 4 caracteres
+      </div>
+      <div *ngIf="password.errors.passwordValidation">
+        {{password.errors.passwordValidation.message}}
+      </div>
+
+    </div>
+
+
+  </div>
+
+  <div class="form-group">
+    <label for="suscripcion">Escoja el tipo de suscripción</label>
+    <select class="form-control" id="suscripcion" name="suscripcion" formControlName="suscripcion">
+      <option *ngFor="let suscripcion of suscripciones" [value]="suscripcion.value">{{suscripcion.text}}</option>
+    </select>
+  </div>
+
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" formControlName="promociones">
+    <label class="form-check-label" for="promociones">Deseo recibir promociones</label>
+  </div>
+
+  <div class="form-group">
+    <a class="btn btn-primary" (click)="agregarTelefono()">Agregar Teléfono</a>
+  </div>
+
+  <div formArrayName="telefonos" *ngFor="let telefono of telefonos.controls; let i = index">
+    <div [formGroupName]="i">
+      <div class="form-group row">
+        <label class="col-md-1" [attr.for]="'telefono' + i">Teléfono</label>
+        <div class="col-md-3">
+          <input type="text" [attr.id]="'telefono' + i" class="form-control" formControlName="telefono">
+        </div>
+        <label class="col-md-1" [attr.for]="'descripcion' + i">Descripción</label>
+        <div class="col-md-5">
+          <input type="text" [attr.id]="'descripcion' + i" class="form-control" formControlName="descripcion">
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-danger" (click)="removerTelefono(i)">Remover</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <button type="submit" class="btn btn-success" [disabled]="registerForm.invalid">Enviar</button>
+  <button type="button" class="btn btn-default" (click)="refrescar()">Refrescar</button>
+
+</form>

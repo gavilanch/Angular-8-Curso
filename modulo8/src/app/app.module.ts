@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { TemplateFormComponent } from './template-form/template-form.component';
 import { PasswordValidationDirective } from './validations/password-validation.directive';
 import { UsernameUnicoDirective } from './validations/username-unico.directive';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { UsernameUnicoDirective } from './validations/username-unico.directive';
     TemplateFormComponent,
     PasswordValidationDirective,
     UsernameUnicoDirective,
+    ReactiveFormComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,13 @@
 import { Directive } from '@angular/core';
-import { NG_VALIDATORS, Validator } from '@angular/forms';
+import { NG_VALIDATORS, Validator, ValidatorFn, AbstractControl } from '@angular/forms';
+
+export function passwordValidation(): ValidatorFn {
+  return (control: AbstractControl) => {
+    const passwordValidationDirective = new PasswordValidationDirective();
+    return passwordValidationDirective.validate(control);
+  }
+ }
+ 
 
 @Directive({
   selector: '[passwordValidation]',
